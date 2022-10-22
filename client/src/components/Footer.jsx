@@ -7,7 +7,7 @@ function Footer() {
         <div class="mx-auto max-w-3xl space-y-6">
         <div
             aria-label="Footer Div"
-            class="rounded-3xl border-4 border-gray-900 p-6"
+            class="rounded-3xl border-4 border-[#EE5622] p-6"
         >
             <ul class="flex flex-wrap justify-center gap-6 text-sm font-bold">
             <li>
