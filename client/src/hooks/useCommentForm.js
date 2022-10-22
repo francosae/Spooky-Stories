@@ -8,6 +8,7 @@ export const useCommentForm = () => {
     const [postId, setPostId] = useState(null)
     const [commentCreated, setCommentCreated] = useState(null)
     const { user } = useAuthContext();
+    console.log(form)
 	const handleOnInputChange = (event) => {
 		setForm((f) => ({ ...f, [event.target?.name]: event.target?.value }));
 	};

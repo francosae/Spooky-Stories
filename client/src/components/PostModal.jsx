@@ -2,7 +2,7 @@
 import React from 'react'
 import { usePostForm } from '../hooks/usePostForm'
 
-function PostCreationModal() {
+function PostModal() {
   const { form, handleOnInputChange, handleOnSubmit, postCreated } = usePostForm()
   if (postCreated === true){
     window.location.reload(false);
@@ -35,4 +35,4 @@ function PostCreationModal() {
 
 
 
-export default PostCreationModal
+export default PostModal

@@ -5,7 +5,6 @@ const AuthContext = createContext("");
 export const AuthContextProvider = ({ children }) => {
 	const [initialized, setInitialized] = useState(false);
 	const [user, setUser] = useState({});
-    console.log(user)
 	useEffect(() => {
 		const fetchUser = async () => {
 			const { data } = await API.fetchUserFromToken();

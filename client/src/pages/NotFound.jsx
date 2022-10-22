@@ -2,19 +2,19 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div class="grid mt-[10%] place-content-center bg-white">
+    <div class="grid mb-[10%] mt-[10%] place-content-center bg-white">
     <div class="text-center">
         
      <img src="https://www.freeiconspng.com/uploads/ghost-icon-12.png" alt="404" width="250" height="350" />
         <h1
-        class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+        class="mt-5 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl"
         >
         👻 Boo!
         </h1>
 
-        <p class="mt-4 text-gray-500">Spooky... we can't find that page.</p>
+        <p class="mt-0 text-gray-500">Spooky... we can't find that page.</p>
         <a
-        href="#"
+        href="/feed"
         class="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
         >
             Run Back Home

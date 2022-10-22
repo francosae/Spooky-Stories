@@ -95,7 +95,7 @@ function Stories(){
 
                 <a
                 href="#"
-                class="mt-8 inline-flex items-center rounded border border-black bg-black px-8 py-3 text-white hover:bg-transparent hover:text-black"
+                class="mt-8 inline-flex items-center rounded border border-black bg-black px-8 py-3 text-white hover:bg-white hover:text-black"
                 >
                 <span class="text-sm font-medium"> Read stories </span>
 
