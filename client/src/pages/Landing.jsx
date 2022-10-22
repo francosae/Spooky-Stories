@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom"
 function Landing() {
   return (
     <>
@@ -12,6 +12,7 @@ function Landing() {
 }
 
 function Hero(){
+    const navigate = useNavigate()
     return(
         <section class=" text-[#221E22]">
         <div
@@ -33,7 +34,7 @@ function Hero(){
             <div class="mt-8 flex flex-wrap justify-center gap-4">
                 <a
                 class="group relative inline-block focus:outline-none focus:ring"
-                href="/download"
+                href="/Register"
                 >
                 <span
                     class="absolute inset-0 translate-x-0 translate-y-0 bg-[#ECA72C] transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"

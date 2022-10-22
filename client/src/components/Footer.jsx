@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer aria-label="Site Footer" class="bg-white text-center">
+    <footer aria-label="Site Footer" class="bg-black text-center">
     <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl space-y-6">
         <div
@@ -12,7 +12,7 @@ function Footer() {
             <ul class="flex flex-wrap justify-center gap-6 text-sm font-bold">
             <li>
             <a
-            class="text-gray-900 hover:text-gray-900/75"
+            class="text-white hover:text-white"
             href="https://github.com/francosae"
             target="_blank"
             rel="noreferrer"
@@ -35,7 +35,7 @@ function Footer() {
 
             <li>
             <a
-            class="text-gray-900 hover:text-gray-900/75"
+            class="text-white hover:text-white"
             href="https://www.linkedin.com/in/paulfranco12/"
             target="_blank"
             rel="noreferrer"
@@ -55,7 +55,7 @@ function Footer() {
             </ul>
         </div>
 
-        <p class="mx-auto max-w-lg text-xs text-gray-500">
+        <p class="mx-auto max-w-lg text-xs text-white">
             Made for MLH's Hack or Treat 2 while I'm supposed to be studying for my midterm.
             <span class="mt-4 block"> 🎃 Built by Paul Franco  </span>
         </p>
