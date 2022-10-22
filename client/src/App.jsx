@@ -1,10 +1,32 @@
-import { useState } from 'react'
+import { AuthContextProvider } from "./contexts/auth"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Login, Register, Feed, Profile, Post, Landing, NotFound } from './pages'
+import { Footer } from "./components"
 
-function App() {
-  return (
-    <div className="App">
-    </div>
+export default function AppContainer(){
+  return(
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
   )
 }
 
-export default App
+function App() {
+  return (
+      <>
+      <BrowserRouter forceRefresh={true}>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup/*" element={<Register />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/user/:username" element={<Profile /> } />
+        <Route path="/posts/:username/:postid" element={<Post /> } />
+        <Route path="*" element={<NotFound /> } />
+      </Routes>
+      </BrowserRouter>
+      <Footer />
+      </>
+  )
+}
+
