@@ -56,8 +56,7 @@ function Footer() {
         </div>
 
         <p class="mx-auto max-w-lg text-xs text-gray-500">
-            Made for MLH's Hack or Treat 2 while I'm supposed to be studying for my midterm
-
+            Made for MLH's Hack or Treat 2 while I'm supposed to be studying for my midterm.
             <span class="mt-4 block"> 🎃 Built by Paul Franco  </span>
         </p>
         </div>
