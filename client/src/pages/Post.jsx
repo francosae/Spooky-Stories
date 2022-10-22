@@ -4,6 +4,7 @@ import API from '../services/apiClient'
 import NotFound from './NotFound'
 import { Link } from "react-router-dom"
 import { useCommentForm } from "../hooks/useCommentForm"
+import { data } from 'autoprefixer'
 function Post() {
     const location = useLocation()
     const [postData, setPostData] = useState(null)
@@ -26,8 +27,12 @@ function Post() {
     }
   if (postData !== null){
     return (
+    <>
+
 <section class="bg-white dark:bg-gray-900 py-8 lg:py-16">
+    
   <div class="max-w-2xl mx-auto px-4">
+  <PostCard post={postData} />
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments ({postData.comments.length})</h2>
     </div>
@@ -58,6 +63,7 @@ function Post() {
       })}
   </div>
 </section>
+</>
   )
 }
   else return(
@@ -65,6 +71,28 @@ function Post() {
   )
 }
 
+function PostCard({ post }){
+    console.log(post)
+    return(
+        <article class="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+        <footer class="flex justify-between items-center mb-2">
+            <div class="flex items-center">
+            <Link class="flex items-center" to={`/user/${post.authorUsername}/`}>
+                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
+                        class="mr-2 w-6 h-6 rounded-full"
+                        src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                        alt="Bonnie Green"/>{post.authorUsername}</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12"
+                        title="March 12th, 2022">{post.createdAt}</time></p>
+            </Link>
+            </div>
+        </footer>
+        <p class="text-5xl text-black dark:text-black">{post.title}</p>
+        <br></br>
+        <p class="text-lg text-black dark:text-black">{post.content}</p>
+    </article>
+    )
+}
 
 function Comment({ data }){
     return(
@@ -72,11 +100,11 @@ function Comment({ data }){
         <article class="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
         <footer class="flex justify-between items-center mb-2">
             <div class="flex items-center">
-                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
+                <p class="inline-flex items-center mr-3 text-sm text-gray-900 break-words dark:text-white"><img
                         class="mr-2 w-6 h-6 rounded-full"
                         src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
                         alt="Bonnie Green"/>{data.authorUsername}</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12"
+                <p class="text-sm text-gray-600 dark:text-gray-400 break-words"><time pubdate datetime="2022-03-12"
                         title="March 12th, 2022">{data.createdAt}</time></p>
             </div>
             <button id="dropdownComment3Button" data-dropdown-toggle="dropdownComment3"
@@ -91,7 +119,7 @@ function Comment({ data }){
                 <span class="sr-only">Comment settings</span>
             </button>
         </footer>
-        <p class="text-gray-500 dark:text-gray-400">{data.content}</p>
+        <p class="text-gray-500 dark:text-gray-400 break-words ">{data.content}</p>
     </article>
     </Link>
     )
