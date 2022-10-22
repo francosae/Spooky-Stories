@@ -5,9 +5,8 @@ const AuthContext = createContext("");
 export const AuthContextProvider = ({ children }) => {
 	const [initialized, setInitialized] = useState(false);
 	const [user, setUser] = useState({});
-
+    console.log(user)
 	useEffect(() => {
-		console.log(user)
 		const fetchUser = async () => {
 			const { data } = await API.fetchUserFromToken();
 			if (data) {
@@ -18,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
 
 		const token = localStorage.getItem("token");
 		if (token) {
-			apiClient.setToken(token);
+			API.setToken(token);
 			fetchUser();
 		} else {
 			setInitialized(false);
@@ -27,7 +26,7 @@ export const AuthContextProvider = ({ children }) => {
 	}, [initialized]);
 
 	const handleLogout = async () => {
-		await apiClient.logoutUser();
+		await API.logoutUser();
 		setUser({});
 
 	};

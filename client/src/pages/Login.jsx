@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { useLoginForm } from "../hooks/useLoginForm"
+import { Link } from "react-router-dom"
 function Login() {
+  const { form, handleOnInputChange, handleOnSubmit } = useLoginForm()
   return (
-<section>
+ <section>
   <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-[74vh]">
     <div class="mx-auto max-w-lg">
       <h1 class="text-center text-2xl font-bold text-[#EE5622] sm:text-3xl">
@@ -13,7 +15,7 @@ function Login() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
       </p>
   
-      <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+      <div action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
         <p class="text-lg font-medium">Sign in to your account</p>
   
         <div>
@@ -21,8 +23,10 @@ function Login() {
   
           <div class="relative mt-1">
             <input
+              name="email"
               type="email"
-              id="email"
+              autoComplete="email"
+              onChange={handleOnInputChange}
               class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
               placeholder="Enter email"
             />
@@ -51,8 +55,11 @@ function Login() {
   
           <div class="relative mt-1">
             <input
-              type="password"
               id="password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              onChange={handleOnInputChange}
               class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
               placeholder="Enter password"
             />
@@ -81,10 +88,11 @@ function Login() {
             </span>
           </div>
         </div>
-  
+        
         <button
           type="submit"
           class="block w-full rounded-lg bg-[#EE5622] px-5 py-3 text-sm font-medium text-white"
+          onClick={handleOnSubmit}
         >
           Sign in
         </button>
@@ -93,7 +101,7 @@ function Login() {
           No account?⠀
           <a class="underline" href="/Register">Sign up</a>
         </p>
-      </form>
+      </div>
     </div>
   </div>
   </section>
