@@ -32,7 +32,7 @@ function FeedGrid(){
     </>: <><CreatePost /></>}
 
         <div
-        class="[column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8"
+        class="[column-fill:_balance] sm:columns-1 sm:gap-6 lg:columns-3 lg:gap-8"
         >
     {posts?.map((post, index) => {
         return <PostCard key={index} post={post} />

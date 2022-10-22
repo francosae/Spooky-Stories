@@ -25,7 +25,7 @@ export default function Profile() {
       >  
     {userData ?  
     <ProfileCard user={userData} /> : <></>}
-    <div className="mx-auto max-w-screen px-4 ml-[-250px] py-16 sm:px-6 lg:px-8 ">
+    <div className="mx-auto max-w-screen px-4 lg:ml-[-250px] py-16 sm:px-6 lg:px-8 ">
     <span
   class="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm"
 >
@@ -54,7 +54,7 @@ export default function Profile() {
      <>
       <div className="container columns-2 flex gap-2 items-baseline">
       <div
-          class="mt-4 grid grid-cols- gap-px sm:grid-cols-2 lg:grid-cols-1 lg:gap-4
+          class="mt-4 grid grid-cols-1 gap-px sm:grid-cols-1 lg:grid-cols-1 lg:gap-4
           "
         >
         {tab == 'Posts' ? <>
