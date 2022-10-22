@@ -5,6 +5,7 @@ import API from "../services/apiClient";
 
 export const useRegistrationForm = () => {
 	const { user, setUser } = useAuthContext();
+    const [accountCreated, setAccountCreated] = useState(null)
 	const { form, errors, setErrors, handleOnInputChange } =
 		useAuthenticationForm({ user });
 	const [isProcessing, setIsProcessing] = useState(false);
@@ -22,7 +23,8 @@ export const useRegistrationForm = () => {
 
 		if (data) {
 			setUser(data.newUser);
-			apiClient.setToken(data.token);
+			API.setToken(data.token);
+            setAccountCreated(true)
 		}
 		setIsProcessing(false);
 	};
@@ -33,5 +35,6 @@ export const useRegistrationForm = () => {
 		isProcessing,
 		handleOnInputChange,
 		handleOnSubmit,
+        accountCreated
 	};
 };

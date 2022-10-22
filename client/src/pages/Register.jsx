@@ -1,6 +1,13 @@
 import React from 'react'
-
+import { useRegistrationForm } from '../hooks/useRegistrationForm'
+import { useNavigate } from "react-router-dom"
 function Register() {
+    const { form, isProcessing, handleOnInputChange, handleOnSubmit, accountCreated } = useRegistrationForm();
+    const navigate = useNavigate()
+    console.log(accountCreated)
+    if (accountCreated == true){
+        navigate('/feed')
+    }
   return (
     <section class="bg-white">
     <div class="lg:grid lg:min-h-[100vh] lg:grid-cols-12">
@@ -58,7 +65,7 @@ function Register() {
             </p>
             </div>
 
-            <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+            <div class="mt-8 grid grid-cols-6 gap-6">
             <div class="col-span-6">
                 <label
                 for="FirstName"
@@ -68,9 +75,12 @@ function Register() {
                 </label>
 
                 <input
-                type="text"
                 id="username"
                 name="username"
+                type="username"
+                autoComplete="username"
+                onChange={handleOnInputChange}
+                required
                 class="mt-1 w-full rounded-md h-10  border-black text-sm text-gray-700 shadow-md"
                 />
             </div>
@@ -80,9 +90,12 @@ function Register() {
                 </label>
 
                 <input
-                type="email"
-                id="Email"
+                id="email-address"
                 name="email"
+                type="email"
+                autoComplete="email"
+                onChange={handleOnInputChange}
+                required
                 class="mt-1 w-full rounded-md h-10  border-black text-sm text-gray-700 shadow-md"
                 />
             </div>
@@ -96,9 +109,13 @@ function Register() {
                 </label>
 
                 <input
-                type="password"
-                id="Password"
+                id="password"
                 name="password"
+                type="password"
+                pattern=".{8,}"
+                autoComplete="password"
+                onChange={handleOnInputChange}
+                required
                 class="mt-1 w-full rounded-md h-10  border-black text-sm text-gray-700 shadow-md"
                 />
             </div>
@@ -112,9 +129,13 @@ function Register() {
                 </label>
 
                 <input
-                type="password"
-                id="PasswordConfirmation"
-                name="password_confirmation"
+                id="passwordConfirm"
+                name="passwordConfirm"
+                type="passwordConfirm"
+                pattern=".{8,}"
+                autoComplete="passwordConfirm"
+                onChange={handleOnInputChange}
+                required
                 class="mt-1 w-full rounded-md h-10  border-black text-sm text-gray-700 shadow-md"
                 />
             </div>
@@ -143,7 +164,6 @@ function Register() {
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
             <a
                 class="group relative inline-block focus:outline-none focus:ring"
-                href="/Register"
                 >
                 <span
                     class="absolute inset-0 translate-x-0 translate-y-0 bg-[#ECA72C] transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"
@@ -151,6 +171,7 @@ function Register() {
 
                 <span
                     class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest"
+                    onClick={handleOnSubmit}
                 >
                     Create Account
                 </span>
@@ -162,7 +183,7 @@ function Register() {
                 <a href="/Login" class="text-gray-700 underline">Log in</a>.
                 </p>
             </div>
-            </form>
+            </div>
         </div>
         </main>
     </div>

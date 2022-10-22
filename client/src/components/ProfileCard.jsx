@@ -1,9 +1,9 @@
-import React from 'react'
-
-export default function ProfileCard({ user }) {
-  console.log(user)
+import React, { useState } from 'react'
+import { useAuthContext } from '../contexts/auth'
+export default function ProfileCard({ users }) {
+  const { user } = useAuthContext()
     return (
-    <div class="w-full max-w-sm sticky bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full max-w-sm sticky min-h-screen  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="flex justify-end px-4 pt-4">
             <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
                 <span class="sr-only">Open dropdown</span>
@@ -12,9 +12,10 @@ export default function ProfileCard({ user }) {
         </div>
         <div class="flex flex-col items-center pb-10">
             <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://i.picsum.photos/id/909/200/200.jpg?hmac=MBq84AuRxQbIS381LPxRbG5b7THHQUSRuIupyC6IJGg" alt="Bonnie image" />
-            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user.username}</h5>
+            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{users.username}</h5>
+            <h6 class="font-medium"> Following {users.following.length} Followers {users.followedBy.length}</h6>
             <div class="flex mt-4 space-x-3 md:mt-6">
-                <a href="" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Follow</a>
+                {users?.email !== user?.email ? <><a href="" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-[#f16d21]rounded-lg ">Follow</a></> : <></>}
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@ function Post() {
                 </span>
         </a>
     </div></>}
-    {postData?.comments?.map((comment, index) => {
+    {postData?.comments?.reverse().map((comment, index) => {
         return <Comment key={index} data={comment} />
       })}
   </div>
