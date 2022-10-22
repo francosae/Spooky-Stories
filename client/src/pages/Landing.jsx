@@ -5,6 +5,7 @@ function Landing() {
     <>
         <Hero />
         <Stories />
+        <Divider />
         <Placeholder />
     </>
   )
@@ -20,9 +21,9 @@ function Hero(){
             <h1
                 class="bg-gradient-to-r from-[#ECA72C] to-[#EE5622] bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
             >
-                Understand User Flow.
+                Share and read spooky stories!
 
-                <span class="sm:block"> Increase Conversion. </span>
+                <span class="sm:block">  </span>
             </h1>
 
             <p class="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">
@@ -67,253 +68,77 @@ function Hero(){
     )
 }
 
+
 function Stories(){
     return (
     <section class="bg-[#EE5622]">
-    <div
-        class=" mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-[5] lg:items-center"
-    >
-        <div
-        class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16"
-        >
-        <div class="mx-auto max-w-lg text-center lg:mx-0 lg:text-left">
-            <h2 class="text-3xl font-bold sm:text-4xl">Read some of our current stories! 📖👻</h2>
-
-            <h1 class="mt-4 text-[#221E22]">
-            Welcome to my website about sharing spooky stories. Our current stories are sure to send a chill up your spine. So sit back, relax, and enjoy and check out some of our current stories.
-            </h1>
-
-            <a
-            class="mt-8 inline-flex items-center rounded border border-black bg-black px-8 py-3 text-white "
-            href="/get-started"
+        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <div
+                class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
             >
-            <span class="text-sm font-medium"> Read stories </span>
-
-            <svg
-                class="ml-3 h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                <img
+                alt="Party"
+                src="https://media.istockphoto.com/photos/jack-o-lantern-picture-id613872668?k=20&m=613872668&s=612x612&w=0&h=_QkgsUeuQeOrS6wdi0iqciBsS_iRDzKM1obLvItTryA="
+                class="absolute inset-0 h-full w-full object-cover"
                 />
-            </svg>
-            </a>
+            </div>
+
+            <div class="lg:py-24">
+                <h2 class="text-3xl font-bold sm:text-4xl">Read some of our current stories! 📖👻</h2>
+
+                <h1 class="mt-4 text-[#221E22]">
+                Welcome to my website about sharing spooky stories. Our current stories are sure to send a chill up your spine. So sit back, relax, and enjoy and check out some of our current stories.
+                </h1>
+
+
+                <a
+                href="#"
+                class="mt-8 inline-flex items-center rounded border border-black bg-black px-8 py-3 text-white hover:bg-transparent hover:text-black"
+                >
+                <span class="text-sm font-medium"> Read stories </span>
+
+                <svg
+                    class="ml-3 h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                </svg>
+                </a>
+            </div>
+            </div>
         </div>
-
-        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-
-            <a
-            class="block rounded-xl border border-black p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-            href="/accountant"
-            >
-            <span class="inline-block rounded-lg bg-gray-50 p-3">
-                <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                <path
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                ></path>
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-                </svg>
-            </span>
-
-            <h2 class="mt-2 font-bold">Accountant</h2>
-
-            <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur.
-            </p>
-            </a>
-        </div>
-        </div>
-    </div>
     </section>
 
     )
 }
 
-
+function Divider(){
+    return (
+        <div
+        class="bg-black px-4 py-3 text-white sm:flex sm:items-center sm:justify-center sm:px-6 lg:px-8 "
+        >
+        <h2 class="text-center text-lg font-medium sm:text-left">
+            Check out some user reviews!
+        </h2>
+        <p>
+        ⠀
+        </p>
+        </div>
+    )
+}
 function Placeholder(){
     return(
     <section>
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 class="max-w-xl text-4xl font-bold sm:text-5xl">
-        Read my personal favorites!
-        </h2>
         <div
         class="[column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8"
         >
@@ -332,14 +157,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://picsum.photos/seed/picsum/200/300"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
@@ -355,14 +179,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://picsum.photos/id/237/200/300"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
@@ -379,14 +202,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://picsum.photos/200/300?grayscale"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
@@ -401,14 +223,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://i.picsum.photos/id/5/200/200.jpg?hmac=oN9VtXdJYLSFssji8vCr48JaI-e5Zi4eH9GAiYBB_Ig"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
@@ -424,14 +245,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://i.picsum.photos/id/494/200/200.jpg?hmac=U0wPc_GayOgCTqCyWzhy9Cc_mj8wZEPjLdqILTEl4AM"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
@@ -446,14 +266,13 @@ function Placeholder(){
 
             <div class="mt-4 flex items-center gap-4">
             <img
-                alt="Woman"
-                src="https://images.unsplash.com/photo-1603366445787-09714680cbf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80"
+                src="https://i.picsum.photos/id/171/200/200.jpg?hmac=Iac8JDq1zmWNTEFRE3gkPZthKsJwpOS76FjbzDkGSc8"
                 class="h-12 w-12 rounded-full object-cover"
             />
 
             <div class="text-sm">
-                <p class="font-medium">Gladis Lennon</p>
-                <p class="mt-1">Head of SEO</p>
+                <p class="font-medium">Paul Franco</p>
+                <p class="mt-1">Cool Guy</p>
             </div>
             </div>
         </div>
