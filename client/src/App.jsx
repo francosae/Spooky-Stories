@@ -1,7 +1,7 @@
 import { AuthContextProvider } from "./contexts/auth"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Login, Register, Feed, Profile, Post, Landing, NotFound } from './pages'
-import { Footer } from "./components"
+import { Footer, Navbar } from "./components"
 
 export default function AppContainer(){
   return(
@@ -14,6 +14,7 @@ export default function AppContainer(){
 function App() {
   return (
       <>
+      <Navbar /> 
       <BrowserRouter forceRefresh={true}>
       <Routes>
         <Route path="/" element={<Landing />} />

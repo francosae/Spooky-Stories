@@ -2,10 +2,10 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div class="grid h-[60vh] place-content-center bg-white">
+    <div class="grid mt-[10%] place-content-center bg-white">
     <div class="text-center">
         
-     <img src="https://www.freeiconspng.com/uploads/ghost-icon-12.png" alt="404" width="350" height="450" />
+     <img src="https://www.freeiconspng.com/uploads/ghost-icon-12.png" alt="404" width="250" height="350" />
         <h1
         class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl"
         >
