@@ -16,4 +16,27 @@ router.get('/', async (req, res) => {
   })
 
   
+router.get('/:username', async (req, res) => {
+    const { username } = req.params
+    try {
+        const user = await prisma.user.findUnique({
+          where: {
+            username: username
+          },
+          include: {
+            writtenPosts: true,
+            writtenComments: true,
+            likedPosts: true,
+            followedBy: true,
+            following: true,
+          }
+        })
+        delete user['password']
+        res.json(user)
+      } catch (error) {
+        console.log(error)
+      }
+    })
+
+  
 module.exports = router;

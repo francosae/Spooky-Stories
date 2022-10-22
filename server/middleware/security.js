@@ -28,10 +28,6 @@ const extractUserFromJwt = (req, res, next) => {
 const requireAuthenticatedUser = async (req, res, next) => {
 	try {
 		const { user } = res.locals;
-
-		// if (!user?.email) {
-		// 	throw new UnauthorizedError("no user");
-		// }
 		return next();
 	} catch (err) {
 		return next(err);

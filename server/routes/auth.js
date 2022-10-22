@@ -18,7 +18,7 @@ router.post('/register', async (req, res, next) => {
         const { userData } = req.body
         registerFields.forEach((property) => {
             if (!userData.hasOwnProperty(property)){
-                throw new BadRequestError(`Missing ${property} in request body`)
+                throw new BadRequestError(`Missing ${property} in body`)
             }
         })
         if (!validateEmaiL(userData.email)){
@@ -62,7 +62,7 @@ router.post('/login', async (req, res, next) => {
         const { userData } = req.body
         loginFields.forEach((property) => {
             if (!userData.hasOwnProperty(property)){
-                throw new BadRequestError(`Missing ${property} in request body`)
+                throw new BadRequestError(`Missing ${property} in body`)
             }
         })
         const existingUser = await prisma.user.findUnique({
@@ -95,10 +95,9 @@ router.post('/login', async (req, res, next) => {
     }
 })
 
-router.get('/me', security.requireAuthenticatedUser, async (req, res, next) => {
+router.get('/me', security.extractUserFromJwt, async (req, res, next) => {
     try {
         const user = res.locals.user
-
         const existingUser = await prisma.user.findUnique({
             where: {
                 email: user.email
