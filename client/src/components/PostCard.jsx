@@ -2,11 +2,14 @@ import React, {useState} from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function PostCard({ post }) {
-  return (
+function PostCard({ post, type }) {
+  if (type == 'comment'){
+    console.log(post)
+  }
+    return (
     
     <div class="mb-8 sm:break-inside-avoid">
-        <Link to={`/posts/${post.authorUsername}/${post.id}`}>
+        <Link to={type == 'comment' ? `/user/${post.authorUsername}/` : `/posts/${post.authorUsername}/${post.id}`}>
             <blockquote class="rounded-xl bg-gray-50 p-6 shadow">
             <p class="text-3xl">
                 {post.title}
