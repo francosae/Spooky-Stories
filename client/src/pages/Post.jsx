@@ -4,7 +4,6 @@ import API from '../services/apiClient'
 import NotFound from './NotFound'
 import { Link } from "react-router-dom"
 import { useCommentForm } from "../hooks/useCommentForm"
-import { data } from 'autoprefixer'
 function Post() {
     const location = useLocation()
     const [postData, setPostData] = useState(null)
@@ -72,9 +71,11 @@ function Post() {
 }
 
 function PostCard({ post }){
+    const [disabled, setDisabled] = useState(false)
     console.log(post)
     return(
-        <article class="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+    <>
+        <article class="p-6 mb-6 text-base mt-5 rounded-md bg-[#f2f2f2] border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
         <footer class="flex justify-between items-center mb-2">
             <div class="flex items-center">
             <Link class="flex items-center" to={`/user/${post.authorUsername}/`}>
@@ -90,15 +91,26 @@ function PostCard({ post }){
         <p class="text-5xl text-black dark:text-black">{post.title}</p>
         <br></br>
         <p class="text-lg text-black dark:text-black">{post.content}</p>
+        <br></br>
     </article>
+    <p class="text-md text-black dark:text-black">Liked By: 
+        <div class="flex mb-5 -space-x-4">
+        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+        </div>
+    </p>
+    </>
     )
 }
 
 function Comment({ data }){
     return(
-        <Link to={`/user/${data.authorUsername}/`}>
-        <article class="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+
+        <article class="p-6 mb-6 text-base  border-t rounded-md bg-[#f2f2f2] border-gray-200 dark:border-gray-700 dark:bg-gray-900">
         <footer class="flex justify-between items-center mb-2">
+        <Link to={`/user/${data.authorUsername}/`}>
             <div class="flex items-center">
                 <p class="inline-flex items-center mr-3 text-sm text-gray-900 break-words dark:text-white"><img
                         class="mr-2 w-6 h-6 rounded-full"
@@ -107,8 +119,9 @@ function Comment({ data }){
                 <p class="text-sm text-gray-600 dark:text-gray-400 break-words"><time pubdate datetime="2022-03-12"
                         title="March 12th, 2022">{data.createdAt}</time></p>
             </div>
+        </Link>
             <button id="dropdownComment3Button" data-dropdown-toggle="dropdownComment3"
-                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400bg-[#f2f2f2]  rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 type="button">
                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +134,6 @@ function Comment({ data }){
         </footer>
         <p class="text-gray-500 dark:text-gray-400 break-words ">{data.content}</p>
     </article>
-    </Link>
     )
 }
 export default Post
