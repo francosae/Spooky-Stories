@@ -1,5 +1,5 @@
 import { useAuthContext } from "../contexts/auth"
-import PostCreationModal from "./PostModal"
+
 function Navbar() {
     const { user, handleLogout } = useAuthContext()
     return (
@@ -16,7 +16,7 @@ function Navbar() {
         </a>
         :
         <a href="/">
-        <button type="button" onClick={handleLogout} class="text-white bg-[#ECA72C] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#ECA72C] dark:hover:bg-[#EE5622] dark:focus:ring-[#ECA72C]">Logout</button>
+        <button type="button" onClick={handleLogout} class="text-white bg-[#ECA72C] hover:bg-[#f16d21] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#ECA72C] dark:hover:bg-[#EE5622] dark:focus:ring-[#ECA72C]">Logout</button>
         </a>
         }
     </div>

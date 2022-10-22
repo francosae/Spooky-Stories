@@ -4,8 +4,10 @@ import API from '../services/apiClient'
 import NotFound from './NotFound'
 import { Link } from "react-router-dom"
 import { useCommentForm } from "../hooks/useCommentForm"
+import { useAuthContext } from "../contexts/auth"
 function Post() {
     const location = useLocation()
+    const { user } = useAuthContext()
     const [postData, setPostData] = useState(null)
     const { form, handleOnInputChange, handleOnSubmit, setPostId, postId, commentCreated} = useCommentForm()
     useEffect(() => {
@@ -35,8 +37,9 @@ function Post() {
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments ({postData.comments.length})</h2>
     </div>
+    {user?.id == null ? <></>:<>
     <div class="mb-6">
-        <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <label for="comment" class="sr-only">Your comment</label>
             <textarea name="content" onChange={handleOnInputChange} rows="6"
                 class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
@@ -56,7 +59,7 @@ function Post() {
                     Post Comment
                 </span>
         </a>
-    </div>
+    </div></>}
     {postData?.comments?.map((comment, index) => {
         return <Comment key={index} data={comment} />
       })}
@@ -90,7 +93,7 @@ function PostCard({ post }){
         </footer>
         <p class="text-5xl text-black dark:text-black">{post.title}</p>
         <br></br>
-        <p class="text-lg text-black dark:text-black">{post.content}</p>
+        <p class="text-lg text-black dark:text-black break-words" >{post.content}</p>
         <br></br>
     </article>
     <p class="text-md text-black dark:text-black">Liked By: 

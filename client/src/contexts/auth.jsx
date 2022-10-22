@@ -23,7 +23,6 @@ export const AuthContextProvider = ({ children }) => {
 		}
 
 	}, [initialized]);
-
 	const handleLogout = async () => {
 		await API.logoutUser();
 		setUser({});
