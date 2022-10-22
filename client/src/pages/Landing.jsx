@@ -50,7 +50,7 @@ function Hero(){
 
                 <a
                 class="group relative inline-block focus:outline-none focus:ring"
-                href="/download"
+                href="/feed"
                 >
                 <span
                     class="absolute inset-0 translate-x-0 translate-y-0 bg-[#EE5622] transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"
