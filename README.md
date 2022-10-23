@@ -1,4 +1,4 @@
-# Spooky-Stories : Deployed at https://classy-twilight-07b30d.netlify.app/
+
 ![Capture](https://user-images.githubusercontent.com/69439997/197389334-e2ce2095-05e8-41e3-9341-271d613bd0dc.PNG)
 
 ## Inspiration
@@ -21,3 +21,5 @@ I refined some of my CSS and Frontend skills. I learned how to use React Hooks m
 
 ## What's next for Spooky Stories
 I would like to incorporate some sort of notification system with Twilio, where you get an email when someone interacts with your post, whether it is a comment or a like. 
+
+## Deployed at https://classy-twilight-07b30d.netlify.app/
