@@ -1,4 +1,4 @@
-# Spooky-Stories
+# Spooky-Stories : Deployed at https://classy-twilight-07b30d.netlify.app/
 ![Capture](https://user-images.githubusercontent.com/69439997/197389334-e2ce2095-05e8-41e3-9341-271d613bd0dc.PNG)
 
 ## Inspiration
