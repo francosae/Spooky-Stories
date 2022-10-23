@@ -92,6 +92,20 @@ class ApiClient {
 		})
 	}
 
+	async likePost(endpoint){
+		return await this.request({
+			endpoint: endpoint,
+			method: `POST`,
+		})
+	}
+
+    async unlikePost(endpoint){
+		return await this.request({
+			endpoint: endpoint,
+			method: `POST`,
+		})
+	}
+
 }
 
 const API = new ApiClient("http://localhost:3001");

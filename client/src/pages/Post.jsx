@@ -5,11 +5,16 @@ import NotFound from './NotFound'
 import { Link } from "react-router-dom"
 import { useCommentForm } from "../hooks/useCommentForm"
 import { useAuthContext } from "../contexts/auth"
+import { useLikeHook } from '../hooks/useLikeHook'
+import { useUnlikeHook } from '../hooks/useUnlikeHook'
 function Post() {
     const location = useLocation()
     const { user } = useAuthContext()
     const [postData, setPostData] = useState(null)
     const { form, handleOnInputChange, handleOnSubmit, setPostId, postId, commentCreated} = useCommentForm()
+    const { likeSubmit, liked, setPostId1 } = useLikeHook()
+    const { unlikeSubmit, unliked, setPostId2 } = useUnlikeHook()
+
     useEffect(() => {
         async function fetchPostData(){
             const { data } = await API.fetchUserPost(location.pathname)
@@ -21,11 +26,23 @@ function Post() {
     if (postData?.id){
             if (!postId){
             setPostId(postData.id)
+            setPostId2(postData?.id)
+            setPostId1(postData?.id)
         }
     }
     if (commentCreated === true){
         window.location.reload(false);
     }
+    console.log(postData)
+    //likes
+
+    async function unlike(){
+        unlikeSubmit()
+    }
+    async function like(){
+        likeSubmit()
+    }
+    //
   if (postData !== null){
     return (
     <>
@@ -38,6 +55,22 @@ function Post() {
         <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments ({postData.comments.length})</h2>
     </div>
     {user?.id == null ? <></>:<>
+    {liked == true ? <>
+    <button onClick={() => unlike()} class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+      >
+    ♡
+    </button>
+    </>
+    :
+    <>
+    <button onClick={() => like()} class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+      >
+    ❤️
+    </button>
+    </>
+    }
+
+
     <div class="mb-6">
     <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <label for="comment" class="sr-only">Your comment</label>
@@ -74,10 +107,10 @@ function Post() {
 }
 
 function PostCard({ post }){
-    const [disabled, setDisabled] = useState(false)
-    console.log(post)
+
     return(
     <>
+    
         <article class="p-6 mb-6 text-base mt-5 rounded-md bg-[#f2f2f2] border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
         <footer class="flex justify-between items-center mb-2">
             <div class="flex items-center">
@@ -97,11 +130,13 @@ function PostCard({ post }){
         <br></br>
     </article>
     <p class="text-md text-black dark:text-black">Liked By: 
-        <div class="flex mb-5 -space-x-4">
-        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
-        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
-        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
-        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+        <div class="flex mb-5 -space-x-4 tooltip tooltip-left bg-white" data-tip={`Liked By: ${post?.likedBy.map((user) => {return (user.username)})} `}>
+            {post.likedBy.map((user, index) => {
+                return(
+                <Link to={`/user/${user.username}/`}>
+                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://i.picsum.photos/id/273/200/200.jpg?hmac=q1g4PnYVQHWkGBWnLmy3VaiQHuPGrZXnpZK986TwkFg" alt=""/>
+                </Link>
+            )})}
         </div>
     </p>
     </>
