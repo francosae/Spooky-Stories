@@ -24,7 +24,7 @@ export default function Profile() {
       >  
     {userData ?  
     <ProfileCard users={userData} /> : <></>}
-    <div className="mx-auto max-w-screen px-4 lg:ml-[-50px] py-16 sm:px-6 lg:px-8 ">
+    <div className="relativemx-auto max-w-screen px-4 lg:ml-[] py-16 sm:px-6 lg:px-8 ">
     <span
   class="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm"
     >
