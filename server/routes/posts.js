@@ -96,6 +96,7 @@ router.post('/:author', security.requireAuthenticatedUser, async (req,res) => {
 
 router.post('/like/:username/:postid', security.requireAuthenticatedUser, async (req,res) => {
     const { postid, username } = req.params
+    console.log(postid, username)
     try{
         const user = await prisma.user.findUnique({
             where: {
